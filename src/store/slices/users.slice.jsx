@@ -14,24 +14,31 @@ export const UsersSlice = createSlice({
 
 export const getUsersThunk = () => (dispatch) => {
     return axios
-        .get("https://user-crud-17xx.onrender.com/users")
+        .get("http://localhost:8080/users")
         .then((resp) => dispatch(setUsers(resp.data)))
         .catch((error) => console.error(error));
 };
 
 export const createUsersThunk = (data) => (dispatch) => {
     return axios
-        .post("https://user-crud-17xx.onrender.com/users", data)
+        .post("http://localhost:8080/users", data)
         .then(() => dispatch(getUsersThunk()))
         .catch((error) => console.error(error));
 };
 
 export const updateUserThunk = (data) => (dispatch) => {
     return axios
-        .put(`https://user-crud-17xx.onrender.com/users/${data.id}`, data)
+        .put(`http://localhost:8080/users/${data.id}`, data)
         .then(
             () => (dispatch(getUsersThunk()), dispatch(setSelectedUser(null)))
         )
+        .catch((error) => console.error(error));
+};
+
+export const deleteUserThunk = (data) => (dispatch) => {
+    return axios
+        .delete(`http://localhost:8080/users/${data.id}`)
+        .then(() => dispatch(getUsersThunk()))
         .catch((error) => console.error(error));
 };
 

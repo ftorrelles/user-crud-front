@@ -11,10 +11,8 @@ const UserForms = ({ show, handleClose }) => {
     const { register, handleSubmit, reset } = useForm();
     const dispatch = useDispatch();
     const userSelected = useSelector((state) => state.selectedUser);
-    console.log(userSelected);
 
     const submit = (data) => {
-        console.log(data);
         if (userSelected) {
             dispatch(updateUserThunk(data));
         } else {

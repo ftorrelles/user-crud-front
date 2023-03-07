@@ -13,7 +13,11 @@ const NavBarComponent = () => {
             <Navbar bg="dark" variant="dark">
                 <Container>
                     <Navbar.Brand>Users CRUD</Navbar.Brand>
-                    <Button onClick={handleShow}>
+                    <Button
+                        type="button"
+                        class="btn btn-outline-success"
+                        onClick={handleShow}
+                    >
                         Create user <i className="bx bxs-user-detail"></i>
                     </Button>
                 </Container>

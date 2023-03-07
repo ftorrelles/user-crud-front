@@ -1,4 +1,4 @@
-import "bootswatch/dist/minty/bootstrap.min.css";
+import "bootswatch/dist/Sketchy/bootstrap.min.css";
 import "./index.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
